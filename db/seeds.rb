@@ -55,15 +55,15 @@ lesson_6 = Lesson.new(name: "Dinosaurs: when to run", description:"Their vision 
 lesson_6.save
 
 puts "Creating bookings..."
-booking_1 = Booking.new(user_id:user_1.id, lesson_id: 3, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_1 = Booking.new(user_id:user_1.id, lesson_id: 3, start_date: DateTime.new(2023,11,22,17) )
 booking_1.save
-booking_2 = Booking.new(user_id:user_1.id, lesson_id: 5, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_2 = Booking.new(user_id:user_1.id, lesson_id: 5, start_date: DateTime.new(2023,11,22,17) )
 booking_2.save
-booking_3 = Booking.new(user_id: user_2.id, lesson_id: 1, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_3 = Booking.new(user_id: user_2.id, lesson_id: 1, start_date: DateTime.new(2023,11,22,17) )
 booking_3.save
-booking_4 = Booking.new(user_id: user_2.id, lesson_id: 5, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_4 = Booking.new(user_id: user_2.id, lesson_id: 5, start_date: DateTime.new(2023,11,22,17) )
 booking_4.save
-booking_5 = Booking.new(user_id: user_3.id, lesson_id: 2, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_5 = Booking.new(user_id: user_3.id, lesson_id: 2, start_date: DateTime.new(2023,11,22,17) )
 booking_5.save
-booking_6 = Booking.new(user_id: user_3.id, lesson_id: 4, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
+booking_6 = Booking.new(user_id: user_3.id, lesson_id: 4, start_date: DateTime.new(2023,11,22,17) )
 booking_6.save
