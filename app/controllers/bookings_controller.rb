@@ -20,7 +20,13 @@ class BookingsController < ApplicationController
   def edit
   end
 
-  def show
+  def my_bookings
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
+  def my_classes
+    @lessons = Lesson.where(user_id: current_user.id)
+    @bookings = Booking.all
   end
 
   def destroy
