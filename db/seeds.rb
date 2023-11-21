@@ -21,6 +21,7 @@
 
 # my_arr = (1..10)
 
+
 # my_arr.each do |num|
 #   my_user = User.new(email: "Name#{num}@hotmail.com", password: "1234567#{num}")
 #   my_user.save
@@ -67,3 +68,4 @@ booking_5 = Booking.new(user_id: user_3.id, lesson_id: 2, start_date: Date.strpt
 booking_5.save
 booking_6 = Booking.new(user_id: user_3.id, lesson_id: 4, start_date: Date.strptime("2023-21-11", "%Y-%d-%m") )
 booking_6.save
+
