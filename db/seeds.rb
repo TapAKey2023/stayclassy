@@ -7,6 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# User.create(email: "Name1", password:"Password1")
+# User.create(email: "Name2", password:"Password1")
+# User.create(email: "Name3", password:"Password1")
+# User.create(email: "Name4", password:"Password1")
+# User.create(email: "Name5", password:"Password1")
+# User.create(email: "Name6", password:"Password1")
+# User.create(email: "Name1", password:"Password1")
+# User.create(email: "Name1", password:"Password1")
+# User.create(email: "Name1", password:"Password1")
+# User.create(email: "Name1", password:"Password1")
+# User.create(email: "Name1", password:"Password1")
 
+my_arr = (1..10)
 
-Lesson.create(name: "Ruby")
+my_arr.each do |num|
+  my_user = User.new(email: "Name#{num}@hotmail.com", password: "1234567#{num}")
+  my_user.save
+end
