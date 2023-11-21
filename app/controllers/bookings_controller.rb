@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = @user
+    @booking.lesson = @lesson
     if @booking.save
       redirect_to user_path(@user)
     else
@@ -19,7 +20,13 @@ class BookingsController < ApplicationController
   def edit
   end
 
-  def show
+  def my_bookings
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
+  def my_classes
+    @lessons = Lesson.where(user_id: current_user.id)
+    @bookings = Booking.all
   end
 
   def destroy
@@ -30,7 +37,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :start_time, :confirmed, :user_id, :class_id)
+    params.require(:booking).permit(:start_date, :start_time, :confirmed, :user_id, :lesson_id)
   end
 
   def set_booking
