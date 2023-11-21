@@ -1,0 +1,12 @@
+<h1>Classes I offer</h1>
+<% @lessons.each do |lesson| %>
+  <%= lesson.name %>
+  <%= link_to "Delete class", lesson_path(lesson), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
+<% end %>
+<h1>Bookings for my classes</h1>
+<% @bookings.each do |booking| %>
+  <% if booking.lesson.user == current_user %>
+    <%= booking.lesson.name %>
+    <span>Booked by <%= booking.user.name  %></span>
+  <% end %>
+<% end %>

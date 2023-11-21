@@ -1,0 +1,18 @@
+<div class="position-relative">
+  <div class="card-category card-large">
+    <h1><%= @user.name %></h1>
+    <p>
+    Name : <%= @user.name %>
+    <%= @user.photo_url %>
+    Bio: <%= @user.bio %>
+  </div>
+</div>
+<div class="container mb-5">
+  <div class="d-flex justify-content-between my-4">
+    <div>
+      <%= link_to "edit profile", edit_lesson_user_path(@user)%>
+    </div>
+  </div>
+  <div class="row my-2">
+  </div>
+</div>
