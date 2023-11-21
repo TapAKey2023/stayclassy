@@ -10,3 +10,4 @@
 
 
 Lesson.create(name: "Ruby")
+User.create(name: "Alex")
