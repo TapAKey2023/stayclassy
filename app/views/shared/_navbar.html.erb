@@ -12,14 +12,15 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-              <div class="search"><%= image_tag "search.png", alt: "Search", width: 70 %></div> </li>
+              <div class="search"><%= image_tag "search.png", alt: "Search", width: 70 %></div>
+          </li>
           <li class="nav-item dropdown">
           <a href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="nav_icon"><%= image_tag "nav_icon.png", alt: "StayClassy nav", width: 50 %></div>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-              <%= link_to "My Profile", "/lessons/1/users/1/edit", class: "dropdown-item" %>
+              <%= link_to "My Profile", edit_user_registration_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Classes", "#", class: "dropdown-item" %>
               <%= link_to "My Bookings", "#", class: "dropdown-item" %>
 
