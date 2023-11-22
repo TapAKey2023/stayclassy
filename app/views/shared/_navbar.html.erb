@@ -21,9 +21,10 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
 
-              <%= link_to "My Profile", "lessons/1/users/#{current_user.id}", class: "dropdown-item" %>
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Classes", my_classes_bookings_path, class: "dropdown-item" %>
               <%= link_to "My Bookings", my_bookings_bookings_path, class: "dropdown-item" %>
+              <%= link_to "See All Classes", lessons_path, class: "dropdown-item" %>
 
 
 
