@@ -1,0 +1,22 @@
+<div class="position-relative">
+  <div class="card-category card-large">
+    <h1><%= @user.name %></h1>
+    <p>
+    Name : <%= @user.name %>
+    <%# class="user-card-image" style="background-image: url('<%= @user.photo_url %>
+      <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
+      <%= image_tag(@user.photo_url, alt: @user.name) if @user.photo_url.present? %>
+      </div>
+    Bio: <%= @user.bio %>
+    </p>
+  </div>
+</div>
+<div class="container mb-5">
+  <div class="d-flex justify-content-between my-4">
+    <div>
+      <%= link_to "edit profile", edit_lesson_user_path(@user)%>
+    </div>
+  </div>
+  <div class="row my-2">
+  </div>
+</div>

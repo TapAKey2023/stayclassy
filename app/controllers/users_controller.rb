@@ -1,31 +1,42 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :edit, :update]
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user)
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
+
+  # def new
+  #   @user = User.new
+  # end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to lesson_user_path(@user)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def new
-    @user = User.new
-  end
-
-  def edit
-  end
-
   def show
-    @class = Class.new
-    @booking = Booking.new(user: @user)
   end
 
-  def destroy
-    @user.destroy
-    redirect_to users_path, status: :see_other
-  end
+  # def show
+  #   @lesson = Lesson.new
+  #   @booking = Booking.new(user: @user)
+  # end
+
+  # def destroy
+  #   @user.destroy
+  #   redirect_to users_path, status: :see_other
+  # end
 
   private
 
