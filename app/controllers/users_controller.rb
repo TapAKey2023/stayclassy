@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: [:show, :edit, :update]
 
   # def create
   #   @user = User.new(user_params)
@@ -17,10 +17,21 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def show
-    @class = Class.new
-    @booking = Booking.new(user: @user)
+  def update
+    if @user.update(user_params)
+      redirect_to lesson_user_path(@user)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
+  def show
+  end
+
+  # def show
+  #   @lesson = Lesson.new
+  #   @booking = Booking.new(user: @user)
+  # end
 
   # def destroy
   #   @user.destroy

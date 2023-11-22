@@ -3,8 +3,12 @@
     <h1><%= @user.name %></h1>
     <p>
     Name : <%= @user.name %>
-    <%= @user.photo_url %>
+    <%# class="user-card-image" style="background-image: url('<%= @user.photo_url %>
+      <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
+      <%= image_tag(@user.photo_url, alt: @user.name) if @user.photo_url.present? %>
+      </div>
     Bio: <%= @user.bio %>
+    </p>
   </div>
 </div>
 <div class="container mb-5">

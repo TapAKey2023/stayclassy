@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid navbar-content">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <div class="logo"><%= image_tag "sclogo.png", alt: "StayClassy Logo", width: 200 %></div>
            <% end %>
 
@@ -20,18 +20,23 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-              <%= link_to "My Profile", edit_user_registration_path(current_user), class: "dropdown-item" %>
-              <%= link_to "My Classes", "#", class: "dropdown-item" %>
-              <%= link_to "My Bookings", "#", class: "dropdown-item" %>
+
+              <%= link_to "My Profile", "lessons/1/users/#{current_user.id}", class: "dropdown-item" %>
+              <%= link_to "My Classes", my_classes_bookings_path, class: "dropdown-item" %>
+              <%= link_to "My Bookings", my_bookings_bookings_path, class: "dropdown-item" %>
+
 
 
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+
+        <%= link_to "/users/sign_in", class: "navbar-brand" do %>
+      <div class="login"><%= image_tag "profile3.png", alt: "login/new", width: 70 %></div>
+           <% end %>
+
+
         <% end %>
       </ul>
     </div>
