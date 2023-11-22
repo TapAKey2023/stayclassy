@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :bookings, only: [:create, :new, :edit, :show]
   end
-  resources :users, only: [:create, :new, :edit, :show]
+  resources :users, only: [:create, :new, :edit, :show, :update]
   resources :users, only: :destroy
   # root "posts#index"
 
