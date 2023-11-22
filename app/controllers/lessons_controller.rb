@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
     if @lesson.save
-      redirect_to lesson_path(@lesson)
+      redirect_to lessons_path
     else
       render :new, status: :unprocessable_entity
     end
