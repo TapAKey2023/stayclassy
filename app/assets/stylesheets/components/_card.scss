@@ -1,0 +1,15 @@
+.class-card {
+  width: 100%;
+  height: fit-content;
+  border-radius: 20px;
+  background-color: blanchedalmond;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); // Adjust as needed for the number of columns
+  // gap: 45px;
+  // height: 50px;
+  padding: 20px;
+  margin-left: 25px;
+}
