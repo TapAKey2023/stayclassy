@@ -1,13 +1,16 @@
-
 <div class="position-relative">
   <div class="card-category card-large">
     <h1><%= @lesson.name %></h1>
-    <p>
-    <%= @lesson.description %>
-    <%= @lesson.category %>
-    <%= @lesson.price_per_hour %>
-    <%= @lesson.duration %>
-    </p>
+    <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
+    <%= image_tag(@lesson.picture_url, alt: @lesson.name) if @lesson.picture_url.present? %>
+    </div>
+    <div class="card" style="width: 18rem;">
+    <p>Name: <%= @lesson.name %></p>
+    <p>Description: <%= @lesson.description %></p>
+    <p>Category: <%= @lesson.category %></p>
+    <p>Price per hour: £<%= @lesson.price_per_hour %></p>
+    <p>Duration: <%= @lesson.duration %></p>
+    </div>
     <p> Taught by <%= @lesson.user.name%></p>
   </div>
 </div>
