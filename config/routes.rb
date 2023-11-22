@@ -9,19 +9,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :lessons do
-    resources :bookings
-    #  only: [:create, :new, :show, :destroy]
-    resources :users
-    # only: [:create, :new, :edit, :show]
+    resources :bookings, only: [:create, :new, :edit, :show]
+    resources :users, only: [:create, :new, :edit, :show]
   end
+  resources :users, only: :destroy
+  # root "posts#index"
 
   resources :bookings, only: :destroy do
     collection do
       get :my_bookings, :my_classes
     end
   end
-  resources :users
-  # only: :destroy
-  # root "posts#index"
-
 end
