@@ -7,7 +7,7 @@
         </button>
       </div>
 
-      <%= simple_form_for [class, booking] do |f| %>
+      <%= simple_form_for [lesson, booking] do |f| %>
         <div class="modal-body">
           <%= f.association :class, collection: Class.all.order(:name), prompt: "Select a class", input_html: { data: { controller: "tom-select" } } %>
           <%= f.input :comment, placeholder: "Enter sth" %>
