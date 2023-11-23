@@ -33,6 +33,8 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @other_lessons = Lesson.where.not(id: @lesson.id).sample(3)
   end
 
   def create
@@ -57,7 +59,7 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:name, :description, :category, :price_per_hour, :duration, :photo)
+    params.require(:lesson).permit(:name, :description, :category, :total_price, :duration, :photo)
   end
 
 end
