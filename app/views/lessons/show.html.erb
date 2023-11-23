@@ -1,8 +1,8 @@
 <div class="position-relative">
-  <div class="card-category card-large">
+  <div class="card-category card-large container margin-top-negative">
     <h1><%= @lesson.name %></h1>
+    <div class="container margin-top-negative">
     <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
-    <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
 
     <div class="card" style="width: 18rem;">
@@ -13,6 +13,7 @@
     <p>Duration (hour): <%= @lesson.duration %></p>
     </div>
     <p> Taught by <%= @lesson.user.name%></p>
+    </div>
   </div>
 </div>
 <div class="container mb-5">
@@ -31,9 +32,17 @@
   </div>
 </div>
 
-<h3> Other Class you may like...</h3>
-<ul>
-  <% @other_lessons.each do |lesson| %>
-    <li><%= link_to lesson.name, lesson_path(lesson) %></li>
-  <% end %>
-</ul>
+<div class="container margin-top-negative">
+  <h3> Other Classes you may like...</h3>
+  <div class="card-grid">
+      <% @other_lessons.each do |lesson| %>
+       <div class="card">
+          <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
+              <div class="card-class-infos">
+                <h3><%= lesson.name %></h3>
+              </div>
+          <% end %>
+      </div>
+      <% end %>
+  </div>
+</div>
