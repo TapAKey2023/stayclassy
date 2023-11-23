@@ -31,4 +31,9 @@
   </div>
 </div>
 
-<%# <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+<h3> Other Class you may like...</h3>
+<ul>
+  <% @other_lessons.each do |lesson| %>
+    <li><%= link_to lesson.name, lesson_path(lesson) %></li>
+  <% end %>
+</ul>
