@@ -1,9 +1,9 @@
 .button {
   border-radius: 20px;
-  width: 134px;
+  width: 180px;
   height: 41px;
   flex-shrink: 0;
-  background: #041C32;
+  background: #32041C;
   color: #CBCACA;
   font-family: Comfortaa;
   font-size: 20px;
@@ -12,4 +12,9 @@
   line-height: normal;
   padding: 10px;
   text-align: center;
+  white-space: nowrap;
+}
+
+.button:hover {
+
 }
