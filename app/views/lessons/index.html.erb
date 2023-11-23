@@ -14,7 +14,7 @@
       <div class="card">
           <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
 
-              <%= image_tag lesson.picture_url %>
+              <%= cl_image_tag lesson.photo.key %>
               <div class="card-class-infos">
                 <h3><%= lesson.name %></h3>
               </div>
