@@ -35,26 +35,26 @@ puts "Creating user 1 and their lessons..."
 user_1 = User.new(email: "Visar@hotmail.com", password: "Visar123", name: "Visar")
 user_1.save!
 
-lesson_1 = Lesson.new(name: "Meditating", description:"Feel very zen. Learn mindfulness. Chill class for all!", category: "Self-care", price_per_hour: "50$", duration: "50 hours", picture_url: "https://m.media-amazon.com/images/I/81Fjo7YQXFL._AC_SX522_.jpg", user_id: user_1.id)
+lesson_1 = Lesson.new(name: "Meditating", description:"Feel very zen. Learn mindfulness. Chill class for all!", category: "Self-care", total_price: 50, duration: 50, picture_url: "https://m.media-amazon.com/images/I/81Fjo7YQXFL._AC_SX522_.jpg", user_id: user_1.id)
 lesson_1.save!
-lesson_2 = Lesson.new(name: "Profiterole Tasting", description:"Taste some delicious cream puffs with chocolate, like a connoisseur",category: "Cooking", price_per_hour: "20$", duration: "2 hours", picture_url:"https://sugarspunrun.com/wp-content/uploads/2023/04/Profiteroles-6-of-9.jpg", user_id: user_1.id)
+lesson_2 = Lesson.new(name: "Profiterole Tasting", description:"Taste some delicious cream puffs with chocolate, like a connoisseur",category: "Cooking", total_price: 20, duration: 2, picture_url:"https://sugarspunrun.com/wp-content/uploads/2023/04/Profiteroles-6-of-9.jpg", user_id: user_1.id)
 lesson_2.save!
 
 puts "Creating user 2 and their lessons..."
 user_2 = User.new(email: "Jess@hotmail.com", password: "Jess123", name: "Jess")
 
 user_2.save
-lesson_3 = Lesson.new(name: "Cat Grooming 101", description:"Learn how to give your cat a proper spa day",category: "Pets", price_per_hour: "30$", duration: "4 hours", picture_url: "https://www.purina.co.uk/sites/default/files/styles/ttt_image_690/public/2020-12/How%20To%20Groom%20Your%20Cat%20Properly2.webp?itok=3t9xZGyN", user_id: user_2.id)
+lesson_3 = Lesson.new(name: "Cat Grooming 101", description:"Learn how to give your cat a proper spa day",category: "Pets", total_price: 30, duration: 4, picture_url: "https://www.purina.co.uk/sites/default/files/styles/ttt_image_690/public/2020-12/How%20To%20Groom%20Your%20Cat%20Properly2.webp?itok=3t9xZGyN", user_id: user_2.id)
 lesson_3.save
-lesson_4 = Lesson.new(name: "Marie Antionette's Hairstyles", description:"She had some great wigs",category: "Beauty", price_per_hour: "10$", duration: "2 hours",  picture_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Marie-Antoinette%2C_1775_-_Mus%C3%A9e_Antoine_L%C3%A9cuyer.jpg/220px-Marie-Antoinette%2C_1775_-_Mus%C3%A9e_Antoine_L%C3%A9cuyer.jpg", user_id: user_2.id)
+lesson_4 = Lesson.new(name: "Marie Antionette's Hairstyles", description:"She had some great wigs",category: "Beauty", total_price: 10, duration: 2,  picture_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Marie-Antoinette%2C_1775_-_Mus%C3%A9e_Antoine_L%C3%A9cuyer.jpg/220px-Marie-Antoinette%2C_1775_-_Mus%C3%A9e_Antoine_L%C3%A9cuyer.jpg", user_id: user_2.id)
 lesson_4.save
 
 puts "Creating user 3 and their lessons..."
 user_3 = User.new(email: "Alex@hotmail.com", password: "Alex123", name: "Alex")
 user_3.save
-lesson_5 = Lesson.new(name: "JavaScript for Gaming", description:"Make a enmdless runner game in JS",category: "Coding", price_per_hour: "20$", duration: "5 hours", picture_url: "https://storage.googleapis.com/pod_public/750/168838.jpg", user_id: user_3.id)
+lesson_5 = Lesson.new(name: "JavaScript for Gaming", description: "Make a endless runner game in JS", category: "Coding", total_price: 20, duration: 5, picture_url: "https://storage.googleapis.com/pod_public/750/168838.jpg", user_id: user_3.id)
 lesson_5.save
-lesson_6 = Lesson.new(name: "Dinosaurs: when to run", description:"Their vision is based on movement", category: "Self-care", price_per_hour: "20$", duration: "2 hours", picture_url: "https://s.abcnews.com/images/Technology/gigas-1-gty-er-220707_1657218200336_hpMain_4x3t_992.jpg", user_id: user_3.id)
+lesson_6 = Lesson.new(name: "Dinosaurs: when to run", description: "Their vision is based on movement", category: "Self-care", total_price: 20, duration: 2, picture_url: "https://s.abcnews.com/images/Technology/gigas-1-gty-er-220707_1657218200336_hpMain_4x3t_992.jpg", user_id: user_3.id)
 lesson_6.save
 
 # puts "Creating bookings..."
