@@ -1,21 +1,102 @@
-.class-card {
-  width: 100%;
-  height: fit-content;
-  border-radius: 20px;
-  background-color: blanchedalmond;
+// .class-card {
+//   width: 300px;
+//   height: 300px;
+//   border-radius: 20px;
+//   // box-shadow:  2px 2px 2px #7752FE;
+//   text-align: center;
+//   font-family: $font;
+//   color: #7752FE;
+//   word-wrap: break-word;
+//   align-items: stretch;
+//   font-size: 20px;
+// }
 
-}
-
-.class-card img {
-  height: 200px;
-  object-fit: cover;
-}
+// .class-card img {
+//   height: 200px;
+//   width: 200px;
+//   object-fit: cover;
+//   border-radius: 20px;
+//   overflow: hidden;
+// }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); // Adjust as needed for the number of columns
-  // gap: 45px;
-  // height: 50px;
+  grid-template-columns: repeat(4, 2fr); // Adjust as needed for the number of columns
   padding: 20px;
   margin-left: 25px;
+}
+
+.card-class {
+  padding: 5px;
+  flex: 1;
+  overflow: hidden;
+  background: #32041C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+.card {
+  // display: flex;
+  // border: none;
+  border-radius: 20px;
+}
+
+.card-class > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card-class h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-class p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-class .card-class-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  color: #e6e9f8;
+}
+
+// .card-class-infos .card-class-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 10px #32041C;
+  border: none;
+
+}
+
+.card-class-pricing-cont {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+}
+
+a {
+  color: white;
+}
+
+.card-class-pricing {
+  // bottom: 0;
+  // right: 0;
+  color: #e6e9f8;
+  padding: 0 16px;
 }

@@ -1,6 +1,9 @@
 <div class="position-relative">
   <div class="card-category card-large">
     <h1><%= @lesson.name %></h1>
+    <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
+    <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
 
     <div class="card" style="width: 18rem;">
     <p>Name: <%= @lesson.name %></p>
