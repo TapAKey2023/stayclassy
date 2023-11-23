@@ -1,24 +1,40 @@
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
-    <h1>All lessons available</h1>
+    <%# <h1>All lessons available</h1> %>
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Lessons</h3>
-    <%= link_to "Create a class", new_lesson_path, class: "btn btn-flat" %>
+    <h3 class="mb-0 index-text">Lessons:</h3>
+    <%= link_to "Create a class", new_lesson_path, class: "btn btn-flat button" %>
   </div>
-  <div class="row card-grid">
-    <% @lessons.each do |lesson| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3 class-card">
-        <%= link_to lesson_path(lesson), class:"text-decoration-none" do %>
-          <div class="card-category">
-            <%= image_tag lesson.picture_url, width: 200 %>
-            <h3><%= lesson.name %></h3>
-          </div>
-        <% end %>
+  <div class="card-grid">
+      <% @lessons.each do |lesson| %>
+      <div class="card">
+          <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
+
+              <%= image_tag lesson.picture_url %>
+              <div class="card-class-infos">
+                <h3><%= lesson.name %></h3>
+
+              </div>
+          <% end %>
       </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
+
+
+
+<%# <div class="card-class">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-class-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-class-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-class-user avatar-bordered" />
+  </div>
+</div> %>
