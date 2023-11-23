@@ -40,7 +40,9 @@ lesson_1 = Lesson.new(name: "Meditating", description:"Feel very zen. Learn mind
 lesson_1.photo.attach(io: file_1, filename: "Meditating.jpg")
 lesson_1.save!
 
-lesson_2 = Lesson.new(name: "Profiterole Tasting", description:"Taste some delicious cream puffs with chocolate, like a connoisseur",category: "Cooking", price_per_hour: "20$", duration: "2 hours", picture_url:"https://sugarspunrun.com/wp-content/uploads/2023/04/Profiteroles-6-of-9.jpg", user_id: user_1.id)
+file_6= URI.open("https://sugarspunrun.com/wp-content/uploads/2023/04/Profiteroles-6-of-9.jpg")
+lesson_2 = Lesson.new(name: "Profiterole Tasting", description:"Taste some delicious cream puffs with chocolate, like a connoisseur",category: "Cooking", price_per_hour: "20$", duration: "2 hours", user_id: user_1.id)
+lesson_2.photo.attach(io: file_6, filename: "Tasting.jpg")
 lesson_2.save!
 
 puts "Creating user 2 and their lessons..."
