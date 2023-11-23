@@ -28,11 +28,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  # def show
-  #   @lesson = Lesson.new
-  #   @booking = Booking.new(user: @user)
-  # end
-
   # def destroy
   #   @user.destroy
   #   redirect_to users_path, status: :see_other
