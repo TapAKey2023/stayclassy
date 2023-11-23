@@ -1,8 +1,7 @@
 <div class="position-relative">
   <div class="card-category card-large">
     <h1><%= @lesson.name %></h1>
-    <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
-    <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>    </div>
+
     <div class="card" style="width: 18rem;">
     <p>Name: <%= @lesson.name %></p>
     <p>Description: <%= @lesson.description %></p>
@@ -29,4 +28,9 @@
   </div>
 </div>
 
-<%# <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+<h3> Other Class you may like...</h3>
+<ul>
+  <% @other_lessons.each do |lesson| %>
+    <li><%= link_to lesson.name, lesson_path(lesson) %></li>
+  <% end %>
+</ul>

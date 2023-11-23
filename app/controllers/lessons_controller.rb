@@ -33,6 +33,8 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @other_lessons = Lesson.where.not(id: @lesson.id).sample(3)
   end
 
   def create
