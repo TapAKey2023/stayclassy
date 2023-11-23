@@ -5,11 +5,11 @@
         <h3>Create a new lesson</h3>
         <%= simple_form_for @lesson do |f| %>
           <%= f.input :name %>
-          <%= f.input :picture_url %>
+          <%= f.input :photo, as: :file %>
           <%= f.input :description %>
-          <%= f.input :category %>
           <%= f.input :total_price %>
           <%= f.input :duration, label:"Duration (hours)" %>
+          <%= f.input :category, :collection => %w[Culinary Academics Film Pets Fitness Sports] %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>
