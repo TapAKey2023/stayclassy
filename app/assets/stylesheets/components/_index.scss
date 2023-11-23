@@ -5,3 +5,10 @@
 @import "navbar";
 @import "button";
 @import "card";
+
+body {
+  background-color: #e6e9f8;
+  font-family: $font;
+  color: $primary-color;
+}
+// #e1e7fd
