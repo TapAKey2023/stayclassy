@@ -7,9 +7,9 @@
           <%= f.input :name %>
           <%= f.input :photo, as: :file %>
           <%= f.input :description %>
+          <%= f.input :total_price %>
+          <%= f.input :duration, label:"Duration (hours)" %>
           <%= f.input :category, :collection => %w[Culinary Academics Film Pets Fitness Sports] %>
-          <%= f.input :price_per_hour %>
-          <%= f.input :duration %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>
