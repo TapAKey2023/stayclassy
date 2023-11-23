@@ -5,12 +5,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.lesson = Lesson.find(params[:lesson_id])
-    if @booking.save
-      redirect_to  my_bookings_bookings_path
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @lesson = Lesson.find(params[:lesson_id])
+    @booking.lesson = @lesson
+      if @booking.save
+        redirect_to  my_bookings_bookings_path
+      else
+        render :new, status: :unprocessable_entity
+      end
   end
 
   def new
