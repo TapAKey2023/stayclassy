@@ -5,7 +5,7 @@
         <h3>Create a new lesson</h3>
         <%= simple_form_for @lesson do |f| %>
           <%= f.input :name %>
-          <%= f.input :picture_url %>
+          <%= f.input :photo, as: :file %>
           <%= f.input :description %>
           <%= f.input :category, :collection => %w[Culinary Academics Film Pets Fitness Sports] %>
           <%= f.input :price_per_hour %>
