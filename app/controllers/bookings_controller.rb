@@ -1,19 +1,20 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :destroy
+  before_action :set_booking, only: [:destroy]
   before_action :set_user, only: [:new, :create]
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = @user
-    @booking.lesson = @lesson
+    @booking.user = current_user
+    @booking.lesson = Lesson.find(params[:lesson_id])
     if @booking.save
-      redirect_to user_path(@user)
+      redirect_to  my_bookings_bookings_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def new
+    @lesson = Lesson.find(params[:lesson_id])
     @booking = Booking.new
   end
 
@@ -31,7 +32,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to user_path(@booking.user), status: :see_other
+    redirect_to my_bookings_bookings_path, status: :see_other
   end
 
   private
@@ -45,7 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user.id)
   end
 
 end

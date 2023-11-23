@@ -1,5 +1,4 @@
 <h1>Classes I've booked</h1>
-
 <% @bookings.each  do |booking|%>
 <%= booking.lesson.name %>
 <%= link_to "Delete", booking_path(booking), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>

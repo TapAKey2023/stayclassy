@@ -9,12 +9,12 @@
     <h3 class="mb-0">Lessons</h3>
     <%= link_to "Create a class", new_lesson_path, class: "btn btn-flat" %>
   </div>
-  <div class="row">
+  <div class="row card-grid">
     <% @lessons.each do |lesson| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
+      <div class="co-12 col-sm-6 col-md-4 mb-3 class-card">
         <%= link_to lesson_path(lesson), class:"text-decoration-none" do %>
           <div class="card-category">
-            <%= lesson.name %>
+            <h3><%= lesson.name %></h3>
           </div>
         <% end %>
       </div>
