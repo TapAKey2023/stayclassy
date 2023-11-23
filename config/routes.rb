@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     resources :bookings
     resources :users
   end
+  
+  resources :users, only: [:create, :new, :edit, :show, :update]
+  resources :users, only: :destroy
+  # root "posts#index"
+
 
   resources :bookings, only: :destroy do
     collection do

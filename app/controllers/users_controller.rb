@@ -19,9 +19,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to lesson_user_path(@user)
+      redirect_to user_path(@user)
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
