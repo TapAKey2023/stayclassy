@@ -1,12 +1,43 @@
+<div>
+<div class="my-classes mb-6">
 <h1>Classes I offer</h1>
-<% @lessons.each do |lesson| %>
-  <%= lesson.name %>
+<div class="card-grid">
+      <% @lessons.each do |lesson| %>
+      <div class="card">
+          <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
+          <%= cl_image_tag lesson.photo.key %>
+              <div class="card-class-infos">
+                <h3><%= lesson.name %></h3>
+              </div>
+          <% end %>
+             <button class="btn btn-primary">
   <%= link_to "Delete class", lesson_path(lesson), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
-<% end %>
-<h1>Bookings for my classes</h1>
-<% @bookings.each do |booking| %>
-  <% if booking.lesson.user == current_user %>
-    <%= booking.lesson.name %>
-    <span>Booked by <%= booking.user.name  %></span>
+      </button>
+      </div>
+
+      <% end %>
+  </div>
+
+</div>
+
+<div class = "my-bookings">
+<h1>Classes other people have</h1>
+<div class="card-grid">
+      <% @bookings.each do |booking| %>
+      <% if booking.lesson.user == current_user %>
+      <div class="card">
+          <%= link_to lesson_path(booking.lesson), class:"text-decoration-none card-class" do %>
+          <%= cl_image_tag booking.lesson.photo.key %>
+              <div class="card-class-infos">
+                <h3><%= booking.lesson.name %></h3>
+              </div>
+
+          <% end %>
+
+          <span>Booked by <%= booking.user.name  %></span>
+      </div>
   <% end %>
-<% end %>
+      <% end %>
+  </div>
+</div>
+</div>

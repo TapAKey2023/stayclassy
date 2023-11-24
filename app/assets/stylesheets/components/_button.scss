@@ -1,38 +1,55 @@
 .button {
-  border-radius: 20px;
-  width: 180px;
-  height: 41px;
-  flex-shrink: 0;
-  background: #32041C;
-  color: #070606;
-  font-family: Comfortaa;
+  background-color: none;
+  color: #041C32;
+  padding: 10px 20px;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 10px;
-  text-align: center;
-  white-space: nowrap;
+  transition: 0.5s ease;
+  border: 1px solid #041C32;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 4px 2px;
 }
 
 .button:hover {
-
+ background-color: #041C32;
+ color: #e6e9f9;
+ border: 1px solid #e6e9f9;
+ text-decoration: none;
+ border-radius: 30px;
 }
 
-@keyframes shake {
-  0% { transform: translateX(0px); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0px); }
-}
 
-#booking-button {
-  text-decoration: none;
-  color: brown;
-}
 
-.book-button:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
+// @keyframes shake {
+//   0% { transform: translateX(0px); }
+//   25% { transform: translateX(-5px); }
+//   50% { transform: translateX(5px); }
+//   75% { transform: translateX(-5px); }
+//   100% { transform: translateX(0px); }
+// }
+
+// #booking-button {
+//   text-decoration: none;
+//   color: brown;
+// }
+
+// .book-button:hover {
+//   animation: shake 0.5s;
+//   animation-iteration-count: infinite;
+// }
+
+// .
+//   border-radius: 20px;
+//   width: 180px;
+//   height: 41px;
+//   flex-shrink: 0;
+//   background: #32041C;
+//   color: #070606;
+//   font-family: Comfortaa;
+//   font-size: 20px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: normal;
+//   padding: 10px;
+//   text-align: center;
+//   white-space: nowrap;

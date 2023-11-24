@@ -1,7 +1,15 @@
-<h1>Classes I've booked</h1>
-<% @bookings.each  do |booking|%>
-<div>
-<%= booking.lesson.name %>
-<%= link_to "Delete", booking_path(booking), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
-</div>
-<% end %>
+<h2>My bookings</h2>
+<div class="card-grid">
+      <% @bookings.each do |booking| %>
+      <div class="card">
+          <%= link_to lesson_path(booking.lesson), class:"text-decoration-none card-class" do %>
+          <%= cl_image_tag booking.lesson.photo.key %>
+
+              <div class="card-class-infos">
+                <h3><%= booking.lesson.name %></h3>
+              </div>
+          <%= link_to "Delete this booking", booking_path(booking), class: "delete-link", data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
+          <% end %>
+      </div>
+      <% end %>
+  </div>
