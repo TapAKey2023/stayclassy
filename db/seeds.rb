@@ -35,7 +35,6 @@ User.destroy_all
 puts "Creating user 1 and their lessons..."
 user_1 = User.new(email: "Visar@hotmail.com", password: "Visar123", name: "Visar")
 user_1.save!
-
 file_1 = URI.open("https://m.media-amazon.com/images/I/81Fjo7YQXFL._AC_SX522_.jpg")
 lesson_1 = Lesson.new(name: "Meditating", description:"Feel very zen. Learn mindfulness. Chill class for all!", category: "Self-care", total_price: 50, duration: 7, user_id: user_1.id)
 lesson_1.photo.attach(io: file_1, filename: "Meditating.jpg")
@@ -59,7 +58,6 @@ file_3= URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Mari
 lesson_4 = Lesson.new(name: "Marie Antionette's Hairstyles", description:"She had some great wigs",category: "Beauty", total_price: 10, duration: 2, user_id: user_2.id)
 lesson_4.photo.attach(io: file_3, filename: "Maria.jpg")
 lesson_4.save!
-
 
 puts "Creating user 3 and their lessons..."
 user_3 = User.new(email: "Alex@hotmail.com", password: "Alex123", name: "Alex")

@@ -4,7 +4,7 @@
   height: 41px;
   flex-shrink: 0;
   background: #32041C;
-  color: #CBCACA;
+  color: #070606;
   font-family: Comfortaa;
   font-size: 20px;
   font-style: normal;
@@ -17,4 +17,22 @@
 
 .button:hover {
 
+}
+
+@keyframes shake {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0px); }
+}
+
+#booking-button {
+  text-decoration: none;
+  color: brown;
+}
+
+.book-button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
