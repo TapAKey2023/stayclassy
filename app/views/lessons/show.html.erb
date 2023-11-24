@@ -17,11 +17,11 @@
           </div>
 
           <p> Taught by <%= @lesson.user.name%></p>
-
             <% if current_user != @lesson.user %>
             <button class="book-button" id="booking-button">
             <%= link_to "Booking to this class", new_lesson_booking_path(@lesson) %>
             </button>
+            <% raise %>
             <% end %>
 
         </div>

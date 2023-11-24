@@ -21,6 +21,7 @@
 
 .card-grid {
   display: grid;
+  height: fit-content;
   grid-template-columns: repeat(4, 2fr); // Adjust as needed for the number of columns
   padding: 20px;
   margin-left: 25px;
