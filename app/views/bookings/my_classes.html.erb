@@ -1,6 +1,6 @@
 <div>
 <div class="my-classes mb-6">
-<h1>Classes I offer</h1>
+<h1>Classes I offer:</h1>
 <div class="card-grid">
       <% @lessons.each do |lesson| %>
       <div class="card">
@@ -10,9 +10,12 @@
                 <h3><%= lesson.name %></h3>
               </div>
           <% end %>
-             <button class="btn btn-primary">
-  <%= link_to "Delete class", lesson_path(lesson), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
-      </button>
+
+             <div class="d-flex justify-content-center align-items-center my-bookings-trash-icon">
+              <%= link_to lesson_path(lesson),  data: {turbo_method: "delete", turbo_confirm: "Are you sure?"} do%>
+                <i class="fa-regular fa-trash-can btn-icon mx-2"></i>
+              <% end %>
+            </div>
       </div>
 
       <% end %>
@@ -21,7 +24,7 @@
 </div>
 
 <div class = "my-bookings">
-<h1>Classes other people have</h1>
+<h1>My Students:</h1>
 <div class="card-grid">
       <% @bookings.each do |booking| %>
       <% if booking.lesson.user == current_user %>

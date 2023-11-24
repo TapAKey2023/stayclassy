@@ -1,4 +1,4 @@
-<h1>Book the <%= @lesson.name %> class</h1>
+<h1>Book: <%= @lesson.name %></h1>
 
 
 <div class="container py-5">
@@ -8,7 +8,7 @@
         <%= simple_form_for [@lesson, @booking] do |f| %>
           <%= f.input :start_date %>
           <%= f.input :start_time %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit "Save Booking", class: 'btn btn-flat' %>
         <% end %>
       </div>
     </div>
