@@ -8,8 +8,12 @@
               <div class="card-class-infos">
                 <h3><%= booking.lesson.name %></h3>
               </div>
-          <%= link_to "Delete this booking", booking_path(booking), class: "delete-link", data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
           <% end %>
+          <div class="d-flex justify-content-center align-items-center my-bookings-trash-icon">
+            <%= link_to booking_path(booking),  data: {turbo_method: "delete", turbo_confirm: "Are you sure?"} do%>
+              <i class="fa-regular fa-trash-can btn-icon mx-2"></i>
+            <% end %>
+          </div>
       </div>
       <% end %>
   </div>
