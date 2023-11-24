@@ -1,6 +1,6 @@
 <div>
 <div class="my-classes mb-6">
-<h1>Classes I offer</h1>
+<h1>Classes I offer:</h1>
 <div class="card-grid">
       <% @lessons.each do |lesson| %>
       <div class="card">
@@ -21,7 +21,7 @@
 </div>
 
 <div class = "my-bookings">
-<h1>Classes other people have</h1>
+<h1>My Students:</h1>
 <div class="card-grid">
       <% @bookings.each do |booking| %>
       <% if booking.lesson.user == current_user %>
