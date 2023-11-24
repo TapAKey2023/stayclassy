@@ -1,5 +1,5 @@
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
+  <div class="text-center text-black">
     <h1>Classes</h1>
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
@@ -15,6 +15,7 @@
       <% @lessons.each do |lesson| %>
       <div class="card">
           <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
+          <%= cl_image_tag lesson.photo.key %>
               <div class="card-class-infos">
                 <h3><%= lesson.name %></h3>
               </div>
