@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-4 mx-auto">
-          <h1><%= @lesson.name %></h1>
-          <div class="container margin-top-negative">
+          <h1 class="text-center pt-2"><%= @lesson.name %></h1>
+        <div class="col-md-4 mx-auto d-flex flex-column justify-content-center align-items-center">
+          <div class="container margin-top-negative d-flex justify-content-center">
 
             <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
-              <div class="card d-flex" style="width: 18rem;">
+              <div class="card d-flex pt-4" style="width: 18rem;">
                 <%= cl_image_tag @lesson.photo.key %>
                 <div>
                   <p>Name: <%= @lesson.name %></p>
@@ -19,7 +19,7 @@
 
           </div>
 
-          <p> Taught by <%= @lesson.user.name%></p>
+          <p class="pt-2"> Taught by <%= @lesson.user.name%></p>
 
             <% if current_user != @lesson.user %>
             <%= link_to "Book this class", new_lesson_booking_path(@lesson), class:"button" %>
