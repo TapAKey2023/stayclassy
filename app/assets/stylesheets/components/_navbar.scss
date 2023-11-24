@@ -14,7 +14,7 @@
 .navbar {
   max-width: 100%;
   // position: relative;
-  width: 1512px;
+  // width: 1512px;
   height: 203px;
   background-color: #041c32;
 }
@@ -68,20 +68,24 @@ color: #F6F0F0;
 
 
 .navbar-btn {
-  background-color: #6dbace;
+  background-color: #e6e9f8;
   border: none;
-  color: white;
+  color: #041c32;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 10px auto;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .navbar-btn:hover {
-  background-color: white;
+  background-color: #c2b6e2;
   color: black;
+}
+
+#avatarDropdown {
+  margin: 4px 10px auto;
 }
