@@ -1,107 +1,50 @@
-
-
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Pages#home</h1>
-      <button class="button" type="Sign in">Sign in</button>
-      <p>Find me in app/views/pages/home.html.erb</p>
-    <div class="homepage">
-      <div class="card-grid">
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
+  <html>
+    <head>
+    <style>
+    @keyframes blink{
+      0% {opacity: 1;}
+      50% {opacity: 0.4;}
+      100% {opacity: 1;}
+    }
 
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
+    .button1{
+      animation: blink 2.5s infinite;
+    }
 
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
+    </style>
 
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
+    </head>
+      <body>
+      <div class="split left">
+        <div class="centered">
+          <h1>Ignite Your Brilliance, With Creative Learning</h1>
+          <% if user_signed_in? %>
+            <%= link_to "Lesson List", lessons_path, class:"button1" %>
+          <% else %>
+            <%= link_to "Start Your Journey", new_user_session_path, class:"button1" %>
+          <% end %>
 
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
         </div>
 
       </div>
 
-<div class="card-grid">
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
+      <div class="split right">
+        <div class="centered">
+         <div class="logo">
+            <%= image_tag "StayClassy.png", alt: "StayClassy Logo", width: 200 %></div>
           </div>
         </div>
-
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
-
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
-
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
-
-        <div class="class-card">
-          <div class="overlap-group">
-            <div class="rectangle"></div>
-            <div class="div"></div>
-            <img class="icon-profile-circled" src="img/icon-profile-circled.png" />
-          </div>
-        </div>
-        </div>
+      </div>
 
 
+      </body>
+
+  </html>
 
 
-       <div class="label"><p class="this-is-a-main-title">Browse classes, find your passion!</p></div>
-    </div>
-  </body>
-</html>
-
+  <%# <div class="container">
+         <div class="slogan">
+            <h1>Ignite Your Brilliance, With Creative Learning</h1>
+         </div>
+         <div class="logo">
