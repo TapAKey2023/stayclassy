@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "lessons#index"
+  root to: "pages#home"
+
+  # root to:   "lessons#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
     resources :bookings
     resources :users
   end
-  
+
   resources :users, only: [:create, :new, :edit, :show, :update]
   resources :users, only: :destroy
   # root "posts#index"
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
       get :my_bookings, :my_classes
     end
   end
-  resources :users
+  # resources :users
   # root "posts#index"
 
 end
