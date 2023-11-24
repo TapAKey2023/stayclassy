@@ -10,9 +10,12 @@
                 <h3><%= lesson.name %></h3>
               </div>
           <% end %>
-             <button class="btn btn-primary">
-  <%= link_to "Delete class", lesson_path(lesson), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
-      </button>
+
+             <div class="d-flex justify-content-center align-items-center my-bookings-trash-icon">
+              <%= link_to lesson_path(lesson),  data: {turbo_method: "delete", turbo_confirm: "Are you sure?"} do%>
+                <i class="fa-regular fa-trash-can btn-icon mx-2"></i>
+              <% end %>
+            </div>
       </div>
 
       <% end %>

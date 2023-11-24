@@ -1,3 +1,10 @@
 .my_bookings {
   height: fit-content !important;
 }
+
+.my-bookings-trash-icon {
+  width: 100%;
+  // background-color: $primary-color;
+  color: $secondary-color;
+  padding: 8px;
+}
