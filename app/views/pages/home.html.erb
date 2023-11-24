@@ -20,7 +20,7 @@
         <div class="centered">
           <h1>Ignite Your Brilliance, With Creative Learning</h1>
           <% if user_signed_in? %>
-            <%= link_to "Lesson List", lessons_path, class:"button1" %>
+            <%= link_to "Start Your Journey", lessons_path, class:"button1" %>
           <% else %>
             <%= link_to "Start Your Journey", new_user_session_path, class:"button1" %>
           <% end %>
