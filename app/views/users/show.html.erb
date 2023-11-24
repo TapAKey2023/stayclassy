@@ -7,7 +7,7 @@
       <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
       <%= image_tag(@user.photo_url, alt: @user.name) if @user.photo_url.present? %>
       </div>
-    Bio: <%= @user.bio %>
+    <p>Bio: <%= @user.bio %></p>
     </p>
   </div>
 </div>
