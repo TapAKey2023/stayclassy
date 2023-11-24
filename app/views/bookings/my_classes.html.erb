@@ -9,10 +9,10 @@
               <div class="card-class-infos">
                 <h3><%= lesson.name %></h3>
               </div>
+  <%= link_to "Delete class", lesson_path(lesson), class:"delete-link" ,data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
           <% end %>
-             <button class="btn btn-primary">
-  <%= link_to "Delete class", lesson_path(lesson), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}%>
-      </button>
+
+
       </div>
 
       <% end %>
@@ -21,7 +21,7 @@
 </div>
 
 <div class = "my-bookings">
-<h1>Classes other people have</h1>
+<h1>Bookings for my classes</h1>
 <div class="card-grid">
       <% @bookings.each do |booking| %>
       <% if booking.lesson.user == current_user %>
