@@ -3,18 +3,20 @@
         <div class="col-md-4 mx-auto">
           <h1><%= @lesson.name %></h1>
           <div class="container margin-top-negative">
-          <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
-          <div class="card" style="width: 18rem;">
 
+            <div class="user-card-image row d-lg-inline-flex" style="width: 18rem;">
+              <div class="card d-flex" style="width: 18rem;">
+                <%= cl_image_tag @lesson.photo.key %>
+                <div>
+                  <p>Name: <%= @lesson.name %></p>
+                  <p>Description: <%= @lesson.description %></p>
+                  <p>Category: <%= @lesson.category %></p>
+                  <p>Total price: £<%= @lesson.total_price %></p>
+                  <p>Duration(hour) : <%= @lesson.duration %></p>
+                </div>
+              </div>
+            </div>
 
-            <p>Name: <%= @lesson.name %></p>
-            <p>Description: <%= @lesson.description %></p>
-            <p>Category: <%= @lesson.category %></p>
-            <p>Total price: £<%= @lesson.total_price %></p>
-            <p>Duration (hour): <%= @lesson.duration %></p>
-
-          </div>
-          </div>
           </div>
 
           <p> Taught by <%= @lesson.user.name%></p>
@@ -36,15 +38,17 @@
 
 <div class="container margin-top-negative">
   <h3> Other Classes you may like...</h3>
-  <div class="card-grid">
+  <div class="card-grid ">
       <% @other_lessons.each do |lesson| %>
-       <div class="card">
-          <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
-              <div class="card-class-infos">
-                <h3><%= lesson.name %></h3>
-              </div>
-          <% end %>
-      </div>
-      <% end %>
-  </div>
-</div>
+     <div class="card">
+         <%= link_to lesson_path(lesson), class:"text-decoration-none card-class" do %>
+         <%= cl_image_tag lesson.photo.key %>
+
+             <div class="card-class-infos">
+               <h3><%= lesson.name %></h3>
+             </div>
+         <% end %>
+     </div>
+     <% end %>
+ </div>
+<%# ccc %>
